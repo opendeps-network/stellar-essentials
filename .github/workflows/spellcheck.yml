@@ -1,0 +1,21 @@
+name: Spell Check
+
+on:
+  pull_request:
+    paths:
+      - 'docs/**'
+      - 'website/**'
+      - 'README.md'
+
+jobs:
+  spellcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check spelling
+        uses: streetsidesoftware/cspell-action@v6
+        with:
+          files: |
+            docs/**/*.md
+            README.md
+          config: .cspell.json

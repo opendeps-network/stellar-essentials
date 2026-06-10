@@ -2,3 +2,6 @@ node_modules/
 dist/
 .env
 *.log
+website/build/
+website/.docusaurus/
+website/.cache-loader/
